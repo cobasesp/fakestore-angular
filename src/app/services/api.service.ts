@@ -12,11 +12,17 @@ export class ApiService {
   constructor(private _http:HttpClient) { }
 
   getAllProducts(): Product[] {
-    this._http.get<Product[]>('https://fakestoreapi.com/products')
-      .subscribe(data => {
-        this.products = data;
-      });
+    if (this.products.length > 0) return this.products;
+
+    this.getAllProductsApiRequest('https://fakestoreapi.com/products')
     
     return this.products;
+  }
+
+  getAllProductsApiRequest(url: string):void {
+    this._http.get<Product[]>(url)
+    .subscribe(data => {
+      this.products = data;
+    });
   }
 }
