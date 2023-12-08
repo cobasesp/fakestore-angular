@@ -4,13 +4,12 @@
         <h2>Filters</h2>
     </div>
     <div id="catalogue" class="column is-four-quarter">
-        <div class="columns is-mobile is-multiline is-flex is-flex-direction-row is-justify-content-space-between">
-            <div class="product-container column is-one-quarter box" *ngFor="let product of Products"  [attr.data-id]="product.id">
+        <div class="columns is-mobile is-multiline is-flex is-flex-direction-row is-justify-content-flex-start">
+            <div class="product-container column is-one-fifth box" *ngFor="let product of Products"  [attr.data-id]="product.id">
                 <div class="is-flex is-flex-direction-column is-justify-content-center">
                     <img [attr.src]="product.image" [attr.alt]="product.title" class="product-images">
-                    <p class="product-title">{{ product.title }}</p>
+                    <p class="product-title mt-4">{{ reduceTitle(product.title) }}</p>
                     <a href=""><span class="tag is-link">{{ product.category }}</span></a>
-                    <p>Rating: {{ product.rating.rate }} ({{ product.rating.count }})</p>
                     <app-rating 
                         [rate]="product.rating.rate"
                         [count]="product.rating.count"

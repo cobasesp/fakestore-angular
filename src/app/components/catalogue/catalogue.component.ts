@@ -16,4 +16,12 @@ export class CatalogueComponent implements OnInit {
     return this.api.getAllProducts();
   }
 
+  public reduceTitle(title: string): string {
+    if(title.length > 25) {
+      title = `${title.slice(0, 25)}...`;
+    }
+
+    return title;
+  }
+
 }
