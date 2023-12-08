@@ -8,6 +8,7 @@ import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RatingComponent } from './components/rating/rating.component';
+import { FiltersComponent } from './components/filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { RatingComponent } from './components/rating/rating.component';
     CatalogueComponent,
     HeaderComponent,
     FooterComponent,
-    RatingComponent
+    RatingComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,

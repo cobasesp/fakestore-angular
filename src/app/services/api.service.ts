@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class ApiService {
 
   products: Product[] = [];
+  categories: string[] = [];
 
   constructor(private _http:HttpClient) { }
 
@@ -19,10 +20,25 @@ export class ApiService {
     return this.products;
   }
 
+  getAllCategories(): string[] {
+    if (this.categories.length > 0) return this.categories;
+
+    this.getAllCategoriesApiRequest('https://fakestoreapi.com/products/categories')
+
+    return this.categories;
+  }
+
   getAllProductsApiRequest(url: string):void {
     this._http.get<Product[]>(url)
     .subscribe(data => {
       this.products = data;
+    });
+  }
+
+  getAllCategoriesApiRequest(url: string):void {
+    this._http.get<string[]>(url)
+    .subscribe(data => {
+      this.categories = data;
     });
   }
 }

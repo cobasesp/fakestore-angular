@@ -1,0 +1,6 @@
+<div *ngFor="let category of Categories">
+    <label class="checkbox">
+        <input type="checkbox" [attr.value]="category" (click)="clickCheckBox(category)">
+        {{ category }}
+    </label>
+</div>

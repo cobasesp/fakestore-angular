@@ -10,6 +10,8 @@ export class CatalogueComponent implements OnInit {
 
   constructor(private api:ApiService) { }
 
+  filterList: string[] = [];
+
   ngOnInit(): void {}
 
   get Products() {
@@ -22,6 +24,15 @@ export class CatalogueComponent implements OnInit {
     }
 
     return title;
+  }
+
+  onCheckBoxSelect(filter: string): void {
+    let index = this.filterList.indexOf(filter);
+    if(index > -1) {
+      this.filterList.splice(index, 1);
+    } else {
+      this.filterList.push(filter);
+    }
   }
 
 }
