@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { CatalogueComponent } from './components/catalogue/catalogue.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { RatingComponent } from './components/rating/rating.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CatalogueComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,
