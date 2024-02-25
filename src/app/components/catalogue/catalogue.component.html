@@ -1,34 +1,36 @@
 
-<div id="content" class="columns is-2 p-2">
-    <div id="filters" class="column is-narrow">
-        <h2 class="title">Filters</h2>
-        <app-filters (onCheckBoxSelect)="onCheckBoxSelect($event)"></app-filters>
-    </div>
-    <div id="catalogue" class="column is-four-quarter">
-        <h2 class="title">Catalogue</h2>
-        <div class="columns is-mobile is-multiline is-flex is-flex-direction-row is-justify-content-flex-start">
-            <ng-container *ngFor="let product of Products">
-                <div 
-                    class="product-container column is-3" 
-                    *ngIf="filterList.indexOf(product.category) > -1 || filterList.length == 0"
-                    [attr.data-id]="product.id">
-                    <div class="is-flex is-flex-direction-column is-justify-content-center box">
-                        <img [attr.src]="product.image" [attr.alt]="product.title" class="product-images">
-                        <p class="product-title mt-4">{{ reduceTitle(product.title) }}</p>
-                        <a href=""><span class="tag is-link">{{ product.category }}</span></a>
-                        <app-rating 
-                            [rate]="product.rating.rate"
-                            [count]="product.rating.count"
-                        >
-                        </app-rating>
-                        <p>&nbsp;</p>
-                        <div class="bottom is-flex is-flex-direction-row is-justify-content-space-between">
-                            <span class="price is-size-4">{{ product.price }} €</span>
-                            <button class="button is-primary">Comprar</button>
+<div class="container">
+    <div id="content" class="columns is-2 p-2">
+        <div id="filters" class="column is-narrow">
+            <h2 class="title">Filters</h2>
+            <app-filters (onCheckBoxSelect)="onCheckBoxSelect($event)"></app-filters>
+        </div>
+        <div id="catalogue" class="column is-four-quarter">
+            <h2 class="title">Catalogue</h2>
+            <div class="columns is-mobile is-multiline is-flex is-flex-direction-row is-justify-content-flex-start">
+                <ng-container *ngFor="let product of Products">
+                    <div 
+                        class="product-container column is-3" 
+                        *ngIf="filterList.indexOf(product.category) > -1 || filterList.length == 0"
+                        [attr.data-id]="product.id">
+                        <div class="is-flex is-flex-direction-column is-justify-content-center box">
+                            <img [attr.src]="product.image" [attr.alt]="product.title" class="product-images">
+                            <p class="product-title mt-4">{{ reduceTitle(product.title) }}</p>
+                            <a href=""><span class="tag is-link">{{ product.category }}</span></a>
+                            <app-rating 
+                                [rate]="product.rating.rate"
+                                [count]="product.rating.count"
+                            >
+                            </app-rating>
+                            <p>&nbsp;</p>
+                            <div class="bottom is-flex is-flex-direction-row is-justify-content-space-between">
+                                <span class="price is-size-4">{{ product.price }} €</span>
+                                <button class="button is-primary">Comprar</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </ng-container>
+                </ng-container>
+            </div>
         </div>
     </div>
 </div>
