@@ -6,7 +6,7 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './catalogue.component.html',
   styleUrls: ['./catalogue.component.less']
 })
-export class CatalogueComponent implements OnInit {
+export class CataloguePage implements OnInit {
 
   constructor(private api:ApiService) { }
 

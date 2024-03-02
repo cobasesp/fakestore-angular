@@ -4,25 +4,29 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CatalogueComponent } from './components/catalogue/catalogue.component';
+import { CataloguePage } from './pages/catalogue/catalogue.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RatingComponent } from './components/rating/rating.component';
 import { FiltersComponent } from './components/filters/filters.component';
+import { LoginPage } from './pages/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CatalogueComponent,
+    CataloguePage,
     HeaderComponent,
     FooterComponent,
     RatingComponent,
-    FiltersComponent
+    FiltersComponent,
+    LoginPage
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

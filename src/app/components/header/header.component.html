@@ -1,6 +1,13 @@
 <nav class="navbar is-info is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="container">
-        <a role="button" class="navbar-burger is-pulled-left" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <div class="container" [ngClass]="currentPage == '/login' ? 'is-justify-content-center' : '' "> 
+        <a 
+            role="button" 
+            class="navbar-burger is-pulled-left" 
+            aria-label="menu" 
+            aria-expanded="false" 
+            data-target="navbarBasicExample"
+            *ngIf="currentPage != '/login'"
+        >
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -12,7 +19,7 @@
             </a>
         </div>
     
-        <div id="navbarBasicExample" class="navbar-menu">
+        <div id="navbarBasicExample" class="navbar-menu" *ngIf="currentPage != '/login'">
             <!-- <div class="navbar-start">
                 <a class="navbar-item">
                     Home
@@ -26,7 +33,7 @@
             
         </div>
 
-        <div class="is-pulled-right">
+        <div class="is-pulled-right" *ngIf="currentPage != '/login'">
             <div class="navbar-item">
                 <div *ngIf="!isLogged" class="buttons m-0">
                     <a class="button mb-0 is-primary">
