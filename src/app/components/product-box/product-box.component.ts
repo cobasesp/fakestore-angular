@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
+import { CartService } from 'src/app/services/cart.service';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'product-box',
@@ -11,7 +13,7 @@ export class ProductBoxComponent implements OnInit {
   @Input()
   public product!: Product;
 
-  constructor() { }
+  constructor(private loginService: LoginService, private cartService: CartService) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +24,17 @@ export class ProductBoxComponent implements OnInit {
     }
 
     return title;
+  }
+
+  public addToCart(): void {
+    // Check if user is loged
+    if(!this.loginService.isLogged()) {
+      alert("You need to be loged in to do this action!")
+      return;
+    }
+
+    this.cartService.addProductToCart(this.product, 1)
+    alert("product purchased successfuly!")
   }
 
 }
