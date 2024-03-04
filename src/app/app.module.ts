@@ -11,6 +11,7 @@ import { RatingComponent } from './components/rating/rating.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { LoginPage } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { ProductBoxComponent } from './components/product-box/product-box.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     RatingComponent,
     FiltersComponent,
-    LoginPage
+    LoginPage,
+    ProductBoxComponent
   ],
   imports: [
     BrowserModule,

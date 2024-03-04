@@ -1,0 +1,19 @@
+<div class="product-container column" 
+
+    [attr.data-id]="product.id">
+    <div class="is-flex is-flex-direction-column is-justify-content-center box">
+        <img [attr.src]="product.image" [attr.alt]="product.title" class="product-images">
+        <p class="product-title mt-4">{{ reduceTitle(product.title) }}</p>
+        <a href=""><span class="tag is-link">{{ product.category }}</span></a>
+        <app-rating 
+            [rate]="product.rating.rate"
+            [count]="product.rating.count"
+        >
+        </app-rating>
+        <p>&nbsp;</p>
+        <div class="bottom is-flex is-flex-direction-row is-justify-content-space-between">
+            <span class="price is-size-4">{{ product.price }} €</span>
+            <button class="button is-primary">Comprar</button>
+        </div>
+    </div>
+</div>
