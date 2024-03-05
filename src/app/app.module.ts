@@ -12,6 +12,8 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { LoginPage } from './pages/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { ProductBoxComponent } from './components/product-box/product-box.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { ProductBoxComponent } from './components/product-box/product-box.compon
     RatingComponent,
     FiltersComponent,
     LoginPage,
-    ProductBoxComponent
+    ProductBoxComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

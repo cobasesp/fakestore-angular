@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { Product } from 'src/app/interfaces/product';
 import { CartService } from 'src/app/services/cart.service';
 import { LoginService } from 'src/app/services/login.service';
@@ -8,15 +8,12 @@ import { LoginService } from 'src/app/services/login.service';
   templateUrl: './product-box.component.html',
   styleUrls: ['./product-box.component.less']
 })
-export class ProductBoxComponent implements OnInit {
+export class ProductBoxComponent {
 
   @Input()
   public product!: Product;
 
   constructor(private loginService: LoginService, private cartService: CartService) { }
-
-  ngOnInit(): void {
-  }
 
   public reduceTitle(title: string): string {
     if(title.length > 25) {
@@ -34,7 +31,7 @@ export class ProductBoxComponent implements OnInit {
     }
 
     this.cartService.addProductToCart(this.product, 1)
-    alert("product purchased successfuly!")
+    document.querySelector('#modal')?.classList.add('is-active')
   }
 
 }
