@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductBoxComponent } from './components/product-box/product-box.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MiniCartComponent } from './components/mini-cart/mini-cart.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FiltersComponent,
     LoginPage,
     ProductBoxComponent,
-    ModalComponent
+    ModalComponent,
+    MiniCartComponent
   ],
   imports: [
     BrowserModule,

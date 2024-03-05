@@ -50,4 +50,28 @@ export class CartService {
 
     return currentCart;
   }
+
+  /**
+   * Clear the cart by removing the local storage item
+   */
+  emptyCart(): void {
+    if(localStorage.getItem('cart') != null) {
+      localStorage.removeItem('cart')
+    }
+  }
+
+  /**
+   * Delete an item from the cart by index
+   * 
+   * @param index 
+   */
+  deleteFromCart(index: number): void {
+    let currentCart = this.getProductsFromCart();
+    currentCart = currentCart.filter((item, i) => {
+      return index != i;
+    })
+
+    localStorage.removeItem('cart')
+    localStorage.setItem('cart', JSON.stringify(currentCart))
+  }
 }
